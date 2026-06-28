@@ -59,9 +59,55 @@ AnemiaFusionNet/
 
 Since the web application forms and outputs span a longer page layout, two screens are stacked vertically within the sequential columns to showcase the complete visual flow of the user interface:
 
-| Step 1: Input & Patient Data Collection | Step 2: Prediction Results & Analysis |
-| :---: | :---: |
-| ![Streamlit Input Dashboard - Top Portion](anemia_detection/anemia_detection/Project_img/Screenshot%202026-06-28%20191950.png)<br><br>![Streamlit Input Dashboard - Bottom Portion](anemia_detection/anemia_detection/Project_img/Screenshot%202026-06-28%20192006.png) | ![Streamlit Results View - Top Portion](anemia_detection/anemia_detection/Project_img/Screenshot%202026-06-28%20192046.png)<br><br>![Streamlit Results View - Bottom Portion](anemia_detection/anemia_detection/Project_img/Screenshot%202026-06-28%20192110.png) |
+---
+
+### 2. Multi-Page Web Application UI Showcase (Structured Table)
+Because the application contains 7 key interface images, arrange them inside a clean, professional Markdown/HTML table layout. Use a 3-row sequence matching the following structural grid (2 pairs over 3 rows, with the 7th image taking up its own row at the bottom):
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <b>1. Patient Intake & Demographics Form</b><br>
+      <img src="anemia_detection/project_img/screenshot_1.jpg" width="100%" alt="Demographics Form">
+    </td>
+    <td align="center" width="50%">
+      <b>2. Clinical Parameter Inputs</b><br>
+      <img src="anemia_detection/project_img/screenshot_2.jpg" width="100%" alt="Clinical Inputs">
+    </td>
+  </tr>
+  
+  <tr>
+    <td align="center">
+      <b>3. Conjunctiva Image Upload / Capture</b><br>
+      <img src="anemia_detection/project_img/screenshot_3.jpg" width="100%" alt="Image Upload">
+    </td>
+    <td align="center">
+      <b>4. Real-time Preprocessing Preview</b><br>
+      <img src="anemia_detection/project_img/screenshot_4.jpg" width="100%" alt="Preprocessing View">
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center">
+      <b>5. Pipeline Inference & Probability Logs</b><br>
+      <img src="anemia_detection/project_img/screenshot_5.jpg" width="100%" alt="Inference Logs">
+    </td>
+    <td align="center">
+      <b>6. Multi-Modal Fusion Metric Output</b><br>
+      <img src="anemia_detection/project_img/screenshot_6.jpg" width="100%" alt="Fusion Metrics">
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" align="center">
+      <b>7. Final Diagnostic Report & Medical Recommendations Summary</b><br>
+      <img src="anemia_detection/project_img/screenshot_7.jpg" width="70%" alt="Final Report Summary">
+    </td>
+  </tr>
+</table>
+
+
+---
 | *Patient demographics selection, staining configurations, and key hematological inputs.* | *Direct AI diagnostic outputs, confidence scores, and action-oriented clinical recommendations.* |
 
 ---
