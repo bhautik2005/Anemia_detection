@@ -1,0 +1,26 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Datasets & Data Sheets
+detaset/
+*.csv
+*.xlsx
+
+# Large Machine Learning / Deep Learning Models & Weights
+*.pth
+*.pkl
+*.h5
+
+# IDEs & System files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
