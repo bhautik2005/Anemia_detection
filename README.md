@@ -61,7 +61,7 @@ Since the web application forms and outputs span a longer page layout, two scree
 
 | Step 1: Input & Patient Data Collection | Step 2: Prediction Results & Analysis |
 | :---: | :---: |
-| ![Streamlit Input Dashboard - Top Portion](../Project_img/Screenshot%202026-06-28%20191950.png)<br><br>![Streamlit Input Dashboard - Bottom Portion](../Project_img/Screenshot%202026-06-28%20192006.png) | ![Streamlit Results View - Top Portion](../Project_img/Screenshot%202026-06-28%20192046.png)<br><br>![Streamlit Results View - Bottom Portion](../Project_img/Screenshot%202026-06-28%20192110.png) |
+| ![Streamlit Input Dashboard - Top Portion](anemia_detection/anemia_detection/Project_img/Screenshot%202026-06-28%20191950.png)<br><br>![Streamlit Input Dashboard - Bottom Portion](anemia_detection/anemia_detection/Project_img/Screenshot%202026-06-28%20192006.png) | ![Streamlit Results View - Top Portion](anemia_detection/anemia_detection/Project_img/Screenshot%202026-06-28%20192046.png)<br><br>![Streamlit Results View - Bottom Portion](anemia_detection/anemia_detection/Project_img/Screenshot%202026-06-28%20192110.png) |
 | *Patient demographics selection, staining configurations, and key hematological inputs.* | *Direct AI diagnostic outputs, confidence scores, and action-oriented clinical recommendations.* |
 
 ---
@@ -75,7 +75,7 @@ AnemiaFusionNet utilizes two separate expert ML pipelines targeting clinical tab
 The clinical pipeline classifies rich morphology and blood-profile measurements to predict anemia risk through classic machine learning.
 
 #### Pipeline Flowchart:
-![Clinical Model Pipeline](../../Cinical_&_Eye/clinical_model_pipeline.png)
+![Clinical Model Pipeline](Cinical_&_Eye/clinical_model_pipeline.png)
 
 * **Step 1 — Feature Classification:** The input tabular dataset contains 35 features, which are categorized as follows:
   * **Morphological (11 features):** `cell_diameter_um`, `nucleus_area_pct`, `chromatin_density`, `circularity`, `eccentricity`, `granularity_score`, `lobularity_score`, `membrane_smoothness`, `cell_area_px`, `perimeter_px`, `cytoplasm_ratio`
@@ -100,11 +100,11 @@ The clinical pipeline classifies rich morphology and blood-profile measurements 
 #### Performance Analysis Visualizations:
 | Feature Importance | Correlation Heatmap |
 | :---: | :---: |
-| ![Feature Importance](../../Clinical_%26_Eye/analysis_img/feature_importance.png) | ![Correlation Heatmap](../../Clinical_%26_Eye/analysis_img/correlation_heatmap.png) |
+| ![Feature Importance](Cinical_&_Eye/analysis_img/feature_importance.png) | ![Correlation Heatmap](Cinical_&_Eye/analysis_img/correlation_heatmap.png) |
 
 | Clinical ROC & PR Curves | Clinical Confusion Matrix |
 | :---: | :---: |
-| ![Clinical ROC PR](../../Clinical_%26_Eye/analysis_img/clinical_roc_pr.png) | ![Clinical Confusion Matrix](../../Clinical_%26_Eye/analysis_img/clinical_confusion_matrix.png) |
+| ![Clinical ROC PR](Cinical_&_Eye/analysis_img/clinical_roc_pr.png) | ![Clinical Confusion Matrix](Cinical_&_Eye/analysis_img/clinical_confusion_matrix.png) |
 
 ---
 
@@ -113,7 +113,7 @@ The clinical pipeline classifies rich morphology and blood-profile measurements 
 This pipeline analyzes micro-vascular regions in palpebral and conjunctival eye regions using advanced convolutional networks to identify physical pallor.
 
 #### Pipeline Flowchart:
-![Eye Model Pipeline](../../Anemia_Eye_Decation_CNN/eye_model_pipeline.png)
+![Eye Model Pipeline](Anemia_Eye_Decation_CNN/eye_model_pipeline.png)
 
 * **Step 1 & 2 — Dataset & Label Creation:** Raw images of various exposure types (`*_forniceal.png`, `*_palpebral.png`, `*_forniceal_palpebral.png`) are ingested from structured patient subfolders along with a central `labels.csv` metadata file. Binary classification targets are generated from physiological Hemoglobin levels:
   $$\text{Target} = \begin{cases} 1 \ (\text{Anemic}), & \text{if } \text{Hemoglobin} < 12.0\text{ g/dL} \\ 0 \ (\text{Non-Anemic}), & \text{if } \text{Hemoglobin} \geq 12.0\text{ g/dL} \end{cases}$$
@@ -130,7 +130,7 @@ This pipeline analyzes micro-vascular regions in palpebral and conjunctival eye 
 #### Performance Analysis Visualizations:
 | Training History | Test Predictions Output | Evaluation Metrics |
 | :---: | :---: | :---: |
-| ![Training History](../../Anemia_Eye_Decation_CNN/analysis_img/training_history.png) | ![Test Predictions](../../Anemia_Eye_Decation_CNN/analysis_img/test_predictions.png) | ![Evaluation](../../Anemia_Eye_Decation_CNN/analysis_img/evaluation.png) |
+| ![Training History](Anemia_Eye_Decation_CNN/analysis_img/training_history.png) | ![Test Predictions](Anemia_Eye_Decation_CNN/analysis_img/test_predictions.png) | ![Evaluation](Anemia_Eye_Decation_CNN/analysis_img/evaluation.png) |
 
 ---
 
@@ -139,40 +139,12 @@ This pipeline analyzes micro-vascular regions in palpebral and conjunctival eye 
 The Streamlit web application bridges the high-performance user interface with python model inference scripts via a centralized cache.
 
 #### Architecture Blueprint:
-![Streamlit App Structure](../streamlit_app_structure.png)
+![Streamlit App Structure](anemia_detection/anemia_detection/streamlit_app_structure.png)
 
 The frontend components request predictions by passing raw user form inputs and images directly to [placeholders.py](file:///c:/Users/NKIT/Desktop/Anemia/anemia_detection/anemia_detection/utils/placeholders.py). This file acts as the **Production Inference Bridge**:
 1. **Dynamic Model Loading:** On initial request, it loads the serialized weights (`clinical_model.pkl` and `best_anemia_cnn.pth` / `best_eye_model.pth`) and caches them in memory.
 2. **Tabular Feature Assembly:** It transforms input form dictionaries, calculates the engineered features (e.g., `pallor_index`, `anemia_risk_score`, and shape characteristics), scales the values, and calls the underlying classifier.
 3. **Image Tensor Pipeline:** It receives the uploaded PIL image, converts it to RGB, applies resizing, normalizes the array to standard ImageNet parameters, and feeds the resulting tensor into the PyTorch CNN.
-
----
-
-## 🎨 UI Custom Styling Template Showcase
-
-The application maintains a premium, cohesive developer-focused interface. Below is an example of the responsive, dark-mode visual component card layout with customized white-text configurations used in our Streamlit pages:
-
-```python
-import streamlit as st
-
-# Render custom component card with inline HTML styles
-st.markdown("""
-<div class="card" style="background: #161B22; border: 1px solid #21262D; border-radius: 14px; padding: 24px; margin-bottom: 16px;">
-    <!-- Card Header -->
-    <div style="font-size: 16px; font-weight: 600; color: #E6EDF3; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-        👁️ CNN Eye Model Status
-    </div>
-    <!-- Card Body -->
-    <p style="font-size: 13.5px; color: #8B949E; line-height: 1.6; margin: 0 0 16px 0;">
-        Deep neural network utilizing an EfficientNetB3 backbone fine-tuned for palpebral conjunctiva capillary pallor detection.
-    </p>
-    <!-- Card Footer / Status Badge -->
-    <span style="background-color: rgba(16, 185, 129, 0.15); color: #10B981; padding: 4px 8px; border-radius: 6px; font-size: 12px; font-weight: 500;">
-        ● Active & Loaded
-    </span>
-</div>
-""", unsafe_allow_html=True)
-```
 
 ---
 
@@ -203,3 +175,4 @@ pip install -r requirements.txt
 # Launch the interactive web application dashboard
 streamlit run app.py
 ```
+
