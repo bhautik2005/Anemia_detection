@@ -85,9 +85,9 @@ The clinical pipeline classifies rich morphology and blood-profile measurements 
   * **Target & Scores:** `anomaly_label` (Target), `cytodiffusion_anomaly`, `classification_conf`, `labeller_confidence`
   * **Data Leakage Drop Rules:** `cell_id`, `cell_type`, and `disease_category` are strictly dropped prior to training.
 * **Step 2 — Feature Engineering (7 new features created):**
-  * *Pallor & Color Index:* $\text{pallor\_index} = \frac{R - G}{R + B}$ and $\text{green\_red\_ratio} = \frac{G}{R}$
+  * *Pallor & Color Index:* **pallor_index** = $\frac{R - G}{R + B}$ and **green_red_ratio** = $\frac{G}{R}$
   * *Anemia Risk Score:* Calculated as $\mathbb{I}(\text{Hgb} < 12) + \mathbb{I}(\text{MCV} < 80) + \mathbb{I}(\text{Hct} < 36)$ resulting in an ordinal score spanning $0$ to $3$.
-  * *Shape & Nucleus:* $\text{shape\_complexity} = \frac{\text{perimeter}}{\sqrt{\text{area}}}$, `morph_score`, `mch_approx`, and `nucleus_to_cell`.
+  * *Shape & Nucleus:* **shape_complexity** = $\frac{\text{perimeter}}{\sqrt{\text{area}}}$, `morph_score`, `mch_approx`, and `nucleus_to_cell`.
 * **Step 3 — Preprocessing:** Categorical features are encoded using `LabelEncoder`. Missing records are filled via median imputation. All numeric features are scaled using `StandardScaler` ($\mu=0, \sigma=1$).
 * **Step 4 — Stratified Split:** Data is divided into an 80% Training set and a 20% Test set, stratified by the `anomaly_label` target class.
 * **Step 5 — 5-Fold Cross-Validation:** Four architectures are benchmarked:
@@ -123,7 +123,7 @@ This pipeline analyzes micro-vascular regions in palpebral and conjunctival eye 
 * **Step 5 — Model Architecture (EfficientNetB3):** Features are extracted using an ImageNet-pretrained **EfficientNetB3** backbone. Early layers are frozen to preserve generalized edge-detection capabilities, while the final three convolutional blocks are fully unfrozen for domain-specific fine-tuning. The resulting $1536$-dimensional feature vector is directed to a custom prediction head:
   $$\text{Feature Vector (1536)} \rightarrow \text{Dropout (0.4)} \rightarrow \text{Linear (1536}\rightarrow\text{512)} \rightarrow \text{ReLU} \rightarrow \text{BatchNorm} \rightarrow \text{Dropout (0.2)} \rightarrow \text{Linear (512}\rightarrow\text{2)}$$
 * **Step 6 & 7 — Training & Evaluation:**
-  * **Loss & Optimizer:** Class-weighted Cross-Entropy loss paired with an `AdamW` optimizer ($\text{lr}=10^{-4}, \text{weight\_decay}=10^{-5}$).
+  * **Loss & Optimizer:** Class-weighted Cross-Entropy loss paired with an `AdamW` optimizer (lr = $10^{-4}$, weight_decay = $10^{-5}$).
   * **Learning Schedule:** Cosine Annealing learning rate schedule.
   * **Validation & Save:** Early stopping is activated with a patience threshold of 8 epochs based on validation F1-score tracking. The outputs are exported as `best_eye_model.pth` and `training_history.png`, with secondary diagnostics stored under the workspace `analysis_img` folder.
 
