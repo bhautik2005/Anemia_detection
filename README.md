@@ -67,41 +67,45 @@ Because the application contains 7 key interface images, arrange them inside a c
 <table>
   <tr>
     <td align="center" width="50%">
-      <b>1. Patient Intake & Demographics Form</b><br>
-      <img src="anemia_detection/project_img/screenshot_1.jpg" width="100%" alt="Demographics Form">
+      <b>1. UI & InterFace of web app</b><br>
+      <img src="https://github.com/bhautik2005/Anemia_detection/blob/46b03ade0c693724a2aafb3de71fc3fe4e4051af/anemia_detection/anemia_detection/Project_img/Screenshot%202026-06-28%20192006.png" width="100%" alt="Demographics Form">
     </td>
     <td align="center" width="50%">
-      <b>2. Clinical Parameter Inputs</b><br>
-      <img src="anemia_detection/project_img/screenshot_2.jpg" width="100%" alt="Clinical Inputs">
+      <b>2. AI Model</b><br>
+      <img src="https://github.com/bhautik2005/Anemia_detection/blob/46b03ade0c693724a2aafb3de71fc3fe4e4051af/anemia_detection/anemia_detection/Project_img/Screenshot%202026-06-28%20192958.png" width="100%" alt="Clinical Inputs">
     </td>
   </tr>
   
   <tr>
     <td align="center">
-      <b>3. Conjunctiva Image Upload / Capture</b><br>
-      <img src="anemia_detection/project_img/screenshot_3.jpg" width="100%" alt="Image Upload">
+      <b>3. clinical_model </b><br>
+      <img src=" https://github.com/bhautik2005/Anemia_detection/blob/46b03ade0c693724a2aafb3de71fc3fe4e4051af/anemia_detection/anemia_detection/Project_img/Screenshot%202026-06-28%20192046.png" width="100%" alt="Image Upload">
     </td>
     <td align="center">
-      <b>4. Real-time Preprocessing Preview</b><br>
-      <img src="anemia_detection/project_img/screenshot_4.jpg" width="100%" alt="Preprocessing View">
+      <b>4.  clinical_model </b><br>
+      <img src="https://github.com/bhautik2005/Anemia_detection/blob/46b03ade0c693724a2aafb3de71fc3fe4e4051af/anemia_detection/anemia_detection/Project_img/Screenshot%202026-06-28%20192110.png" width="100%" alt="Preprocessing View">
     </td>
   </tr>
 
   <tr>
     <td align="center">
-      <b>5. Pipeline Inference & Probability Logs</b><br>
-      <img src="anemia_detection/project_img/screenshot_5.jpg" width="100%" alt="Inference Logs">
+      <b>5. Anemia_Decation_CNN Using IMG </b><br>
+      <img src="https://github.com/bhautik2005/Anemia_detection/blob/46b03ade0c693724a2aafb3de71fc3fe4e4051af/anemia_detection/anemia_detection/Project_img/Screenshot%202026-06-28%20192244.png" width="100%" alt="Inference Logs">
     </td>
     <td align="center">
-      <b>6. Multi-Modal Fusion Metric Output</b><br>
-      <img src="anemia_detection/project_img/screenshot_6.jpg" width="100%" alt="Fusion Metrics">
+      <b>6. Anemia_Decation_CNN Using IMG </b><br>
+      <img src="https://github.com/bhautik2005/Anemia_detection/blob/46b03ade0c693724a2aafb3de71fc3fe4e4051af/anemia_detection/anemia_detection/Project_img/Screenshot%202026-06-28%20192320.png" width="100%" alt="Fusion Metrics">
     </td>
   </tr>
 
   <tr>
-    <td colspan="2" align="center">
-      <b>7. Final Diagnostic Report & Medical Recommendations Summary</b><br>
-      <img src="anemia_detection/project_img/screenshot_7.jpg" width="70%" alt="Final Report Summary">
+     <td align="center">
+      <b>7.  Anemia_Decation_CNN Using Web_Cam </b><br>
+      <img src="https://github.com/bhautik2005/Anemia_detection/blob/46b03ade0c693724a2aafb3de71fc3fe4e4051af/anemia_detection/anemia_detection/Project_img/Screenshot%202026-06-28%20192838.png" width="100%" alt="Inference Logs">
+    </td>
+    <td align="center">
+      <b>6.  Anemia_Decation_CNN Using Web_Cam </b><br>
+      <img src="https://github.com/bhautik2005/Anemia_detection/blob/46b03ade0c693724a2aafb3de71fc3fe4e4051af/anemia_detection/anemia_detection/Project_img/Screenshot%202026-06-28%20192849.png" width="100%" alt="Fusion Metrics">
     </td>
   </tr>
 </table>
