@@ -79,7 +79,7 @@ Because the application contains 7 key interface images, arrange them inside a c
   <tr>
     <td align="center">
       <b>3. clinical_model </b><br>
-      <img src=" https://github.com/bhautik2005/Anemia_detection/blob/46b03ade0c693724a2aafb3de71fc3fe4e4051af/anemia_detection/anemia_detection/Project_img/Screenshot%202026-06-28%20192046.png" width="100%" alt="Image Upload">
+      <img src="https://github.com/bhautik2005/Anemia_detection/blob/46b03ade0c693724a2aafb3de71fc3fe4e4051af/anemia_detection/anemia_detection/Project_img/Screenshot%202026-06-28%20192046.png" width="100%" alt="Image Upload">
     </td>
     <td align="center">
       <b>4.  clinical_model </b><br>
