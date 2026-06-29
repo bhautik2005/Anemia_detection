@@ -3,6 +3,10 @@
 AnemiaFusionNet is a state-of-the-art, multi-modal medical Artificial Intelligence (AI) platform designed for the rapid, accurate, and non-invasive detection of anemia. By combining deep learning-based analysis of conjunctival/palpebral eye images with robust machine learning classifiers trained on clinical hematological profiles, AnemiaFusionNet provides clinical-grade predictions and patient-centric risk reports.
 
 ---
+![AI-Based Anemia Detection System | Clinical Data + Eye Image CNN | End-to-End Showcase]
+("https://drive.google.com/file/d/1cRiw2dp9-zEGZ2N2H1QRSADDF1aD733g/view?usp=drive_link")
+
+----
 
 ## 📂 Repository Directory Structure
 
